@@ -12,12 +12,12 @@ import java.time.LocalDateTime;
 @MappedSuperclass
 public abstract class BaseEntity {
 
-    @Column(name = "CREATED_DATE")
+    @Column(name = "CREATED_DATE" , updatable = false)
     @CreationTimestamp
     private Instant created_date;
 
 
-    @Column(name = "updated_date")
+    @Column(name = "updated_date" , insertable = false)
     @UpdateTimestamp
     private Instant updated_date;
 
