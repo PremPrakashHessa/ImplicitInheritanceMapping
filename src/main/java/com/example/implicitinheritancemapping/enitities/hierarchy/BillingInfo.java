@@ -2,11 +2,12 @@ package com.example.implicitinheritancemapping.enitities.hierarchy;
 
 import com.example.implicitinheritancemapping.enitities.BaseEntity;
 import jakarta.persistence.*;
+
 import lombok.Data;
 
+
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "BD")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Data
 public abstract class BillingInfo extends BaseEntity {
 
