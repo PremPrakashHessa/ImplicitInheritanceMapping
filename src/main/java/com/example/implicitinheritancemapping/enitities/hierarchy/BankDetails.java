@@ -3,15 +3,14 @@ package com.example.implicitinheritancemapping.enitities.hierarchy;
 
 import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.Column;
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import lombok.Data;
 
 @Entity
+@DiscriminatorValue("BANK")
 @Data
-@AttributeOverride(
-        name = "owner",
-        column = @Column(name = "ac_owner")
-)
+
 public class BankDetails extends BillingInfo{
 
     @Column(nullable = false)
