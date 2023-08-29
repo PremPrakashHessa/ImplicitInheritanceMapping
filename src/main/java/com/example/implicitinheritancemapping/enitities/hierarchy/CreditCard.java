@@ -1,17 +1,14 @@
 package com.example.implicitinheritancemapping.enitities.hierarchy;
 
 
-import jakarta.persistence.AttributeOverride;
-import jakarta.persistence.Column;
-import jakarta.persistence.DiscriminatorValue;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.Year;
 import java.time.YearMonth;
 
 @Entity
-@DiscriminatorValue("CREDIT")
+@PrimaryKeyJoinColumn(name = "CreditCardID")
 @Data
 
 public class CreditCard extends BillingInfo{

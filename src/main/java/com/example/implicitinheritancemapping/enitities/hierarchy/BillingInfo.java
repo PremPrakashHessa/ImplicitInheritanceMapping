@@ -5,8 +5,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "BD")
+@Inheritance(strategy = InheritanceType.JOINED)
 @Data
 public abstract class BillingInfo extends BaseEntity {
 
