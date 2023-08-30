@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 import lombok.Data;
 
 @Entity
+@DiscriminatorValue("BANK")
 @Data
 
 public class BankDetails extends BillingInfo{
