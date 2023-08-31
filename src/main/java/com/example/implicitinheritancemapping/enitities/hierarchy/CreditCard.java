@@ -31,5 +31,4 @@ public class CreditCard extends BillingInfo{
 
    /* @OneToOne
     private User user;*/
-
 }
