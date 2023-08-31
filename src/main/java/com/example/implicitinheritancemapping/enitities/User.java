@@ -25,6 +25,9 @@ public class User {
     private boolean active;
     private int level;
 
+
+
+
     /*
     says basic attribute type should not be a mapped super class
      */
