@@ -1,12 +1,14 @@
 package com.example.implicitinheritancemapping.enitities.hierarchy;
 
 import com.example.implicitinheritancemapping.enitities.BaseEntity;
+import com.example.implicitinheritancemapping.enitities.User;
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "BD_TYPE")
+
+@Inheritance(strategy = InheritanceType.JOINED)
+
 @Data
 public abstract class BillingInfo extends BaseEntity {
 
@@ -15,5 +17,8 @@ public abstract class BillingInfo extends BaseEntity {
     private Long id;
 
     private String owner;
+
+    @ManyToOne
+    private User user;
 
 }

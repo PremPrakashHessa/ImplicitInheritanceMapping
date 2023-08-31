@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -26,10 +28,26 @@ public class User {
     private int level;
 
     /*
-    says basic attribute type should not be a mapped super class
+    TRYING TO MAP ASSOCIATION
+    EACH USER HAS A DEFAULT BILLING INFO
      */
 
-    //private BillingInfo billingInfo;
+    @OneToOne(cascade = CascadeType.ALL)
+
+    private BillingInfo defaultBillinginfo;
+
+    /*
+
+     */
+    @ManyToOne
+    private BillingInfo sharedBillingDetails;
+
+    /*
+    EACH USER MAY HAVE MULTIPLE BILLING INFORMATION
+     */
+
+    @OneToMany(mappedBy = "user" ,cascade = CascadeType.ALL)
+    private Set<BillingInfo> billingInfos = new HashSet<>();
 
 
     public User(String username,LocalDate registrationDate){
