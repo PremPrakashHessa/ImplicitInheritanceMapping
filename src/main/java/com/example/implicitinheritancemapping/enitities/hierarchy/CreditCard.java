@@ -11,7 +11,6 @@ import java.time.Year;
 import java.time.YearMonth;
 
 @Entity
-@DiscriminatorValue("CreditCard")
 @Data
 @AttributeOverride(
         name = "owner",

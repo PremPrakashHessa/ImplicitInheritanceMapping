@@ -8,7 +8,6 @@ import jakarta.persistence.Entity;
 import lombok.Data;
 
 @Entity
-@DiscriminatorValue(value = "BankDetails")
 @Data
 @AttributeOverride(
         name = "owner",
